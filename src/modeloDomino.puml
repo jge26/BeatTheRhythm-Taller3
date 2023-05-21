@@ -1,0 +1,30 @@
+@startuml
+top to bottom direction
+skin rose
+
+class InstrumentoCuerda {
+idInstrumento
+precioInstrumento
+tipoInstrumento
+tipoCuerdas
+numeroCuerdas
+materialConstruccion
+tipoSonido
+}
+
+class InstrumentoPercusion {
+idInstrumento
+precioInstrumento
+tipoInstrumento
+tipoPercusion
+materialConstruccion
+altura
+}
+
+class InstrumentoViento {
+idInstrumento
+precioInstrumento
+tipoInstrumento
+materialConstruccion
+}
+@enduml

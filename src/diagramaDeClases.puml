@@ -1,0 +1,72 @@
+@startuml
+interface BeatTheRhythm {
++procesarArchivo(entrada: String, salida: String): void
++agregarInstrumentoCuerda(instrumento: String, tipoCuerdas: String, numeroCuerdas: int, materialConstruccion: String, tipoSonido: String): void
++agregarInstrumentoPercusion(instrumento: String, tipoPercusion: String, materialConstruccion: String, alturaInstrumento: String): void
++agregarInstrumentoViento(instrumento: String, materialConstruccion: String): void
+}
+class BeatTheRhythmImpl {
++BeatTheRhythmImpl()
+}
+class ListaInstrumentoViento{
++ListaInstrumentoViento(max:int)
++agregarInstrumento(instrumento:Instrumento):void
++buscar(idInstrumento: double):Instrumento
+}
+class ListaInstrumentoPercusion {
++ListaInstrumentoPercusion(max:int)
++agregarInstrumento(instrumento:Instrumento):void
++buscar(idInstrumento: double):Instrumento
+}
+class ListaInstrumentoCuerda {
++ListaInstrumentoCuerda(max:int)
++agregarInstrumento(instrumento:Instrumento):void
++buscar(idInstrumento: double):Instrumento
+}
+
+class InstrumentoCuerda{
+-double: idInstrumento
+-double: precioInstrumento
+-String: tipoInstrumento
+-String: tipoCuerdas
+-int; cantCuerdas
+-String: materialConstruccion
+-String: tipoSonido
+
++InstrumentoCuerda(idInstrumento: double, precioInstrumento: double, tipoInstrumento: String, tipoCuerdas: String, cantCuerdas: int, materialConstruccion: String, tipoSonido: String)
++gets()
++sets()
+}
+class InstrumentoPercusion{
+-double: idInstrumento
+-double: precioInstrumento
+-String: tipoInstrumento
+-String: tipoPercusion
+-String: materialConstruccion
+-double: alturaInstrumento
+
++InstrumentoPercusion(idInstrumento: double, precioInstrumento: double, tipoInstrumento: String, tipoPercusion: String, materialConstruccion: String, alturaInstrumento: double)
++gets()
++sets()
+}
+
+class InstrumentoViento{
+-double: idInstrumento
+-double: precioInstrumento
+-String: tipoInstrumento
+-String: materialConstruccion
+
++InstrumentoViento(idInstrumento: double, precioInstrumento: double, tipoInstrumento: String, materialConstruccion: String)
++gets()
++sets()
+}
+
+BeatTheRhythmImpl ..|> BeatTheRhythm
+BeatTheRhythm --> ListaInstrumentoCuerda
+BeatTheRhythm --> ListaInstrumentoViento
+BeatTheRhythm --> ListaInstrumentoPercusion
+ListaInstrumentoPercusion --> InstrumentoPercusion
+ListaInstrumentoCuerda --> InstrumentoCuerda
+ListaInstrumentoViento --> InstrumentoViento
+
+@enduml
